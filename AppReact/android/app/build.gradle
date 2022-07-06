@@ -81,6 +81,7 @@ project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
 
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -254,6 +255,8 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+
+    implementation project(':react-native-linear-gradient')
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 

@@ -1,17 +1,21 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../../pages/home';
+import TabNavigator from '../tab';
 
 export default function MainNavigator() {
   const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        initialRouteName="TabNav"
+        screenOptions={{
+          headerTransparent: true,
+        }}>
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="TabNav"
+          component={TabNavigator}
           options={{
             title: '',
           }}
