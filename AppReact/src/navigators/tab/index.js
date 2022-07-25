@@ -29,7 +29,7 @@ export default function TabNavigator() {
         backgroundColor: Colors.background.solid.primaryLight2Alpha,
         position: 'absolute',
       }}
-      initialRouteName="Search"
+      initialRouteName="Home"
       labeled
       activeColor={Colors.font.PrimaryLight}
       inactiveColor={Colors.font.PrimaryDark}>
