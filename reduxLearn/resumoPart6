@@ -1,0 +1,37 @@
+    Memoized selector functions can be used to optimize performance
+        
+        Redux Toolkit re-exports the createSelector function from Reselect, which generates memoized selectors
+        
+        Memoized selectors will only recalculate the results if the input selectors return new values
+        
+        Memoization can skip expensive calculations, and ensure the same result references are returned
+    
+    There are multiple patterns you can use to optimize React component rendering with Redux
+        
+        Avoid creating new object/array references inside of useSelector - those will cause unnecessary re-renders
+        
+        Memoized selector functions can be passed to useSelector to optimize rendering
+        
+        useSelector can accept an alternate comparison function like shallowEqual instead of reference equality
+        
+        Components can be wrapped in React.memo() to only re-render if their props change
+        
+        List rendering can be optimized by having list parent components read just an array of item IDs, passing the IDs to list item children, and retrieving items by ID in the children
+    
+    Normalized state structure is a recommended approach for storing items
+
+        "Normalization" means no duplication of data, and keeping items stored in a lookup table by item ID
+        
+        Normalized state shape usually looks like {ids: [], entities: {}}
+    
+    Redux Toolkit's createEntityAdapter API helps manage normalized data in a slice
+        
+        Item IDs can be kept in sorted order by passing in a sortComparer option
+        
+        The adapter object includes:
+            
+            adapter.getInitialState, which can accept additional state fields like loading state
+            
+            Prebuilt reducers for common cases, like setAll, addMany, upsertOne, and removeMany
+            
+            adapter.getSelectors, which generates selectors like selectAll and selectById
