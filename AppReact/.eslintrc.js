@@ -10,7 +10,8 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'testing-library'],
+  ignorePatterns: ['*test.js'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -24,6 +25,13 @@ module.exports = {
         extensions: ['.jsx', '.js'],
       },
     ],
+    'testing-library/consistent-data-testid': [
+      2,
+      {
+        testIdAttribute: ['testID'],
+        testIdPattern: '^TestId(__[A-Z]*)?$',
+      },
+    ],
     'import/prefer-default-export': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
@@ -31,5 +39,9 @@ module.exports = {
     'react/prop-types': 'off',
     'no-param-reassign': 'off',
     'no-console': 'off',
+    'testing-library/await-async-query': 'error',
+    'testing-library/no-await-sync-query': 'error',
+    'testing-library/no-debugging-utils': 'warn',
+    'testing-library/no-dom-import': 'off',
   },
 };
